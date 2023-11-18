@@ -4,7 +4,6 @@ If sales are under $1,000, the user gets a 10% bonus.
 If sales are $1,000 or over, the bonus is 15%.
 """
 
-
 sales = 1
 while sales>=0:
     sales = float(input("Enter sales: $"))
