@@ -14,21 +14,20 @@
 
 
 name = input("Enter name: ")
-
+menu="(H)ello\n(G)oodbye\n(Q)uit\n"
 
 options =""
 while options!="Q":
 
-    options = input("(H)ello\n(G)oodbye\n(Q)uit\n")
+    options = input(menu)
 
     if options == "H":
         print(f"Hello {name}")
     elif options == "G":
         print(f"Goodbye {name}")
-    elif options == "Q":
-        print("Finished.")
     else:
         print("Invalid choice")
 
+print("Finished")
 
 
