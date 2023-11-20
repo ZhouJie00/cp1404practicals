@@ -25,4 +25,3 @@ def get_asterisk(password):  # get asterisk
     return asterisk_password
 
 
-main
