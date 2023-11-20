@@ -1,15 +1,18 @@
+import random
+def grade_score(score):
+    if score < 0 or score > 100:
+        score = "Invalid score"
+    elif score > 90:
+        score="Excellent"
+    elif score > 50:
+        score="Passable"
+    else:
+        score="Bad"
+    return score
 
+def main():
+    score = random.randint(0,120)
+    print(f"your score is {score}, grade: {grade_score(score)}")
 
+main()
 
-
-
-
-score = float(input("Enter score: "))
-if score < 0 or score > 100:
-    print("Invalid score")
-elif score > 50:
-    print("Passable")
-elif score > 90:
-    print("Excellent")
-else:
-    print("Bad")
