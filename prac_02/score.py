@@ -10,9 +10,12 @@ def grade_score(score):
         score="Bad"
     return score
 
-def main():
-    score = random.randint(0,120)
-    print(f"your score is {score}, grade: {grade_score(score)}")
 
-main()
+# stop score_menu.py from executing main() from score.py, commenting this is needed
+
+# def main():
+#     score = random.randint(0,120)
+#     print(f"your score is {score}, grade: {grade_score(score)}")
+#
+# main()
 
