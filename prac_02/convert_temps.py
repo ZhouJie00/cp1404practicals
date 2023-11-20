@@ -6,14 +6,24 @@ def convert_fahrenheit(celsius):
 def main():
 
     in_file = open("temps_input.txt", "r")
-    line = in_file.readlines()
+    lines = in_file.readlines()
     in_file.close()
 
+    split_lines =[]
+    formated_lines=[]
+    for line in lines:
+        split_lines.append(line.split("\n"))
 
 
-    out_file = open('temps_output.txt', 'a')
-    for x in range(len(line)):
-        out_file.write()
+    for line in split_lines:
+        formated_lines.append(line[0])
 
-    out_file.close()
+    print(formated_lines)
+
+    #
+    # out_file = open('temps_output.txt', 'a')
+    # for i in range(len(line)):
+    #     out_file.write()
+
+    # out_file.close()
 main()
