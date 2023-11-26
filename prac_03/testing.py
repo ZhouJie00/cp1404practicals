@@ -30,4 +30,3 @@ def main():
 
 def load_number(filename):
     infile= open(filename,"r")
-    numer=
