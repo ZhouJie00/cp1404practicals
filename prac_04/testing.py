@@ -1,4 +1,4 @@
-
+from operator import itemgetter
 
 #max(), min(), sum(), length(), sort <- for list
 # sort cannot be used in tuple because the value inside it can't be changed
@@ -93,5 +93,55 @@ print("Python"[0]) #P
 
 data = [['Derek', 7], ['Carrie', 8], ['Bob', 6], ['Aaron', 9]]
 data.sort()
-print(data)
-# Gives [l'Aaron', 9], ['Bob', 6], ['Carrie', 8], ['Derek', 7]1|
+for record in data:
+    print(record)
+    # ['Aaron', 9]
+    # ['Bob', 6]
+    # ['Carrie', 8]
+    # ['Derek', 7]
+
+print("------------------------------")
+
+data = [['Derek', 7], ['Carrie', 8], ['Bob', 6], ['Aaron', 9]]
+data.sort(key=itemgetter(1))
+for record in data:
+    print(record)
+    # ['Bob', 6]
+    # ['Derek', 7]
+    # ['Carrie', 8]
+    # ['Aaron', 9]
+
+print("------------------------------")
+
+data = [['Derek', 7], ['Carrie', 8], ['Bob', 6], ['Aaron', 9]]
+data.sort(key=itemgetter(1),reverse=True) 
+for record in data:
+    print(record)
+    # ['Aaron', 9]
+    # ['Carrie', 8]
+    # ['Derek', 7]
+    # ['Bob', 6]
+
+print("------------------------------")
+
+data = [['Derek', 7], ['Carrie', 8], ['Bob', 6], ['Aaron', 9]]
+data.sort(key=itemgetter(1,0)) # sort by second then first element
+for record in data:
+    print(record)
+    # ['Aaron', 9]
+    # ['Carrie', 8]
+    # ['Derek', 7]
+    # ['Bob', 6]
+
+print("------------------------------")
+
+words= 'this is a test'.split()
+#Gives ['this','is','a','test']
+print(words)
+
+words= 'this is a test'.split()
+for i in range(len(words)):
+    words[i] = words[i].title() # capital the first char
+text = ','.join(words)
+#['this', 'is', 'a', 'test']
+print(text)
