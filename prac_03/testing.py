@@ -65,15 +65,23 @@
 # main()
 
 
-name = ["tom","john","jason"]
-age = ["15","20","23"]
-
-user_info=[]
-for x in range(len(name)):
-    user_info.append(name[x],age[x])
-
-
+# name = ["tom","john","jason"]
+# age = ["15","20","23"]
+#
+# user_info=[]
+# for x in range(len(name)):
+#     user_info.append(name[x],age[x])
 
 
 
-
+try:
+    x = int("zero")
+    print(10 / x)
+except ZeroDivisionError:
+    print("div")
+except NameError:
+    print("name")
+except ValueError:
+    print("value")
+except:
+    print("other")
