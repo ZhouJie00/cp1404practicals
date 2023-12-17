@@ -143,5 +143,21 @@ words= 'this is a test'.split()
 for i in range(len(words)):
     words[i] = words[i].title() # capital the first char
 text = ','.join(words)
-#['this', 'is', 'a', 'test']
+#['This', 'Is', 'A', 'Test']
 print(text)
+
+print("------------------------------")
+
+stuff = (4,5,6)
+print(type(stuff)) #<class 'tuple'>
+print(stuff.index(5)) #1， index of 5 is at 1
+# print(stuff.index(10)) #will not show anything when no found
+
+def format_date (day, month, year):
+    return f"{day}/{month}/{year}"
+date = (22, 11, 1988) # this is a tuple
+
+a= format_date(*date)
+print(a)
+#* unpacks date tuple
+
