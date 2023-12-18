@@ -1,43 +1,53 @@
-class Guitar:
-    def __init__(self, guitar_name="", guitar_year=0, guitar_cost=0):
-        self.name = guitar_name
-        self.year = guitar_year
-        self.cost = guitar_cost
-
-    def __repr__(self):
-        return f"{self.name} ({self.year}) : ${self.cost}"
-
-    def __lt__(self, other):
-        return self.year < other.year
+"""My Guitars client file
+Read guitars from CSV
+Add new guitars from user
+Amend CSV with new guitars from user
+Sorted by oldest to newest
+"""
+from guitar import Guitar
 
 
-guitars = []
-new_guitars = []
+def main():
+    guitars_added = []
+    # Read guitars in CSV
+    in_file = open('guitars.csv', 'r')
+    # File format is like: Name, year, cost
+    # All other lines are data
+    for line in in_file:
+        # Strip newline from end and split it into parts (CSV)
+        parts = line.strip().split(',')
+        # create class objects with parts stripped
+        guitar = Guitar(parts[0], parts[1], parts[2])
+        # Add the guitar we've just constructed to the list
+        guitars_added.append(guitar)
 
-in_file = open("guitars.csv", "r")
+    # Close the file as soon as we've finished reading it
+    in_file.close()
 
-for item in in_file:
-    parts = item.strip().split(',')
-    guitar = Guitar(parts[0], int(parts[1]), parts[-1])
-    guitars.append(guitar)
-
-name = input("Name: ")
-while name != "":
-    year = int(input("Year: "))
-    cost = float(input("Cost: "))
-    name = Guitar(name, year, cost)
-    print(name, "added.")
-    new_guitars.append(name)
-    print("\n")
+    # Ask user for new guitars to be added
+    # blank = no more new guitars
     name = input("Name: ")
+    while name != "":
+        year = input("Year: ")
+        cost = input("Cost: $")
+        add_guitar = Guitar(name, year, cost)
+        guitars_added.append(add_guitar)
+        print(f"{add_guitar} added.")
+        name = input("Name: ")
 
-guitars += new_guitars
-guitars.sort()
-for guitar in guitars:
-    print(guitar)
+    # sort guitar by oldest to newest (year)
+    guitars_added.sort(key=lambda x: x.guitar_year)
 
-with open("guitars.csv", "a") as file:
-    for guitar in new_guitars:
-        print(f"{guitar.name},{guitar.year},{guitar.cost}", file=file)
+    # Open CSV for writing
+    in_file = open('guitars.csv', 'w')
 
-in_file.close()
+    # Write list of guitars into CSV
+    print("New guitars added into CSV, guitars are also sorted oldest to newest")
+    for guitar in guitars_added:
+        print(f"{guitar.guitar_name},{guitar.guitar_year},{guitar.guitar_cost}", file=in_file)
+
+    # close file once done writing in CSV
+    in_file.close()
+
+
+main()

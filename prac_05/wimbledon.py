@@ -7,7 +7,6 @@ def main():
     champion_wins = count_champion_wins(champions)
 
     display_champion_wins(champion_wins)
-    # I'm having a flu, sorry for not completing this week's practical
 
 #read wimbledon data
 def read_wimbledon(filename):
