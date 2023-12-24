@@ -18,6 +18,7 @@ def main():
 
 #get name from email
 def get_name_from_email(email):
+    #email = "john.doe@example.com
     prefix = email.split('@')[0]
     parts = prefix.split('.')
     name = " ".join(parts).title()

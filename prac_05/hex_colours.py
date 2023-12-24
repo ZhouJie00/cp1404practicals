@@ -10,6 +10,8 @@ print(COLOR_NAMES)
 selected_option = input("Enter a color name (e.g. Red): ").title()
 while selected_option != "":
     print("The code for \"{}\" is {}".format(selected_option, COLOR_NAMES.get(selected_option)))
-    choice = input("Enter a color name: ").title()
+    selected_option = input("Enter a color name: ").title()
 
 print("Thank you")
+
+

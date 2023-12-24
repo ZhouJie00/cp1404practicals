@@ -141,7 +141,7 @@ print(words)
 
 words= 'this is a test'.split()
 for i in range(len(words)):
-    words[i] = words[i].title() # capital the first char
+        words[i] = words[i].title() # capital the first char
 text = ','.join(words)
 #['This', 'Is', 'A', 'Test']
 print(text)
@@ -157,7 +157,38 @@ def format_date (day, month, year):
     return f"{day}/{month}/{year}"
 date = (22, 11, 1988) # this is a tuple
 
-a= format_date(*date)
+a = format_date(*date)
 print(a)
 #* unpacks date tuple
 
+
+data = [['Derek', 7], ['Carrie', 8], ['Bob', 6], ['Aaron', 9]]
+numbers = [10, 0, -3, 50, -32, 64, 99, 200]
+words = "CP1404 is a very good subject and I am HAPPY".split()
+
+
+date_string = "12/5/2000" #Enter DOB (d/m/y)
+parts = date_string.split("/") # this will be a list of strings
+my_dob = (int (parts[0]), int(parts[1]), int(parts[2])) #put inside tuple, e.g. (12, 5, 2000)
+print(my_dob)
+
+
+
+myTuple = ("John", "Peter", "Vicky")
+
+x = "#".join(myTuple)
+print(x) #John#Peter#Vicky
+
+
+myDict = {"name": "John", "country": "Norway"}
+mySeparator = "TEST"
+
+x = mySeparator.join(myDict)
+print(x)#nameTESTcountry
+
+message = '     Learn Python  '
+# remove leading and trailing whitespaces
+print('Message:', message.strip())#Learn Python
+print('Message:', message.rstrip())#     Learn Python
+
+print('Message:',message.replace("a", ""))#     Lern Python
