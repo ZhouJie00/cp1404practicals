@@ -10,6 +10,6 @@ Being on the receiving end of code reviews opened my eyes to the importance of w
 ## Thoughts on Practical Tasks
 If I were leading the course, I'd incorporate more real-world projects to bridge the gap between practice tasks and actual software development. I'd also emphasize version control from the start to better equip students for teamwork and industry practices.
  
-## Code Review
+## Code Review 
 1. [PR for Practical 4 - Code Review](https://github.com/ZhouJie00/cp1404practicals/tree/88b9cab36d74f5f5fed2f4f563ef350b5e4f3471/prac_04)
 2. [PR for Practical 5 - Code Review](https://github.com/ZhouJie00/cp1404practicals/tree/88b9cab36d74f5f5fed2f4f563ef350b5e4f3471/prac_05)
