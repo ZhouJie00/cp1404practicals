@@ -13,4 +13,5 @@ class DynamicLabelsApp(App):
 
         return layout
 
+
 DynamicLabelsApp().run()

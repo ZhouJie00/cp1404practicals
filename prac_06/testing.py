@@ -15,11 +15,11 @@ print(a ^ b)
 
 
 d = {'a': 3, 'b': 2, 'c': 1}
-for k in sorted(list(d.keys())):
+for k in sorted((d.keys())):
     print(k, d[k], sep='', end='')
 
-print("")
+print("\nxxx")
 d = {'a': 1, 'b': 2, 'c': 3}
-print(d.get(2))
+print(d.get('a'))
 
 

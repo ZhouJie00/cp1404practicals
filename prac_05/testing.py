@@ -15,7 +15,8 @@ stud_dict = {'101': "Mary Tan", '102': "Peter Pan", '103': "Joe Lim"}
 
 print(stud_dict["102"])#Peter Pan
 
-s= stud_dict.get("103","Not Found")#Joe Lim #ONLY FIND KEY
+s= stud_dict.get("103")
+s= stud_dict.get("103","Not Found")#Joe Lim #ONLY FIND VALUE FROM KEY
 print(s)
 
 s= stud_dict.get("104","Not Found")#Not Found
@@ -45,8 +46,8 @@ print("-----------------")
 print(stud_dict["102"])
 print("-----------------")
 for x in stud_dict:
-    print(x)
-    print(stud_dict[x]) # 101
+    print(x) #key
+    print(stud_dict[x]) # 101           Value
                         # Mary Tan
                         # 102
                         # Peter Pan
@@ -71,9 +72,8 @@ print(list(stud_dict.items())) #[('101', 'Mary Tan'), ('102', 'Peter Pan'), ('10
 stud_dict.clear() #{}
 print(stud_dict)
 
-print("-----------------")
+print("-----------------&")
 dictionary = {'101': "Mary Tan", '102': "Peter Pan", '103': "Joe Lim"}
-
 
 l={}
 # l=dictionary
@@ -82,8 +82,8 @@ l={}
 #     print(l)
 
 for x in dictionary:   #same as i=dictionary
-    l[x]=dictionary[x]
-
+    l[x]=dictionary[x] # l list key = dic value
+    print(l)
 print(l) #{'101': 'Mary Tan', '102': 'Peter Pan', '103': 'Joe Lim'}
 
 

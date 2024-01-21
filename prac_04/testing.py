@@ -1,4 +1,6 @@
 from operator import itemgetter
+from operator import attrgetter
+
 
 #max(), min(), sum(), length(), sort <- for list
 # sort cannot be used in tuple because the value inside it can't be changed
@@ -65,7 +67,7 @@ print(scores)
 
 things = [1,'a',True]
 
-things.append(21)
+things.append(21)     #only way to create new index in list
 things.append("EEEEE")
 
 things[2] = "TRUE"
@@ -91,8 +93,44 @@ things[1] #[1,2,3]
 print([1,2,3][0]) #1
 print("Python"[0]) #P
 
+
+print("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&")
+data = [7,8,6,9]
+data.sort() #small to big
+for record in data:
+    print(record)
+    # 6
+    # 7
+    # 8
+    # 9
+
+print("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&")
+data = [[7], [8], [6], [9]]
+data.sort() #small to big
+for record in data:
+    print(record)
+    # [6]
+    # [7]
+    # [8]
+    # [9]
+
+    # itemgetter = for nested list or directory
+    # small to big, default
+    # A to Z,default
+print("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&")
+
 data = [['Derek', 7], ['Carrie', 8], ['Bob', 6], ['Aaron', 9]]
-data.sort()
+data.sort() #big to small
+for record in data:
+    print(record)
+    # ['Aaron', 9]
+    # ['Bob', 6]
+    # ['Carrie', 8]
+    # ['Derek', 7]
+
+print("------------------------------")
+data = [['Derek', 7], ['Carrie', 8], ['Bob', 6], ['Aaron', 9]]
+data.sort(key=itemgetter(0))
 for record in data:
     print(record)
     # ['Aaron', 9]
@@ -133,6 +171,14 @@ for record in data:
     # ['Derek', 7]
     # ['Bob', 6]
 
+# attrgetter = for class sorting
+# data = [Person(name="Bob", age=18), ...]
+# data.sort(key=attrgetter("name"))
+
+
+#for dictionary itemgetter
+# data = [{'name': 'Derek', 'score': 7}, {'name': 'Carrie', 'score': 8}, {'name': 'Bob', 'score': 6}, {'name': 'Aaron', 'score': 9}]
+# data.sort(key=itemgetter('score'))
 print("------------------------------")
 
 words= 'this is a test'.split()
@@ -143,7 +189,7 @@ words= 'this is a test'.split()
 for i in range(len(words)):
         words[i] = words[i].title() # capital the first char
 text = ','.join(words)
-#['This', 'Is', 'A', 'Test']
+#This,Is,A,Test
 print(text)
 
 print("------------------------------")
@@ -155,8 +201,8 @@ print(stuff.index(5)) #1， index of 5 is at 1
 
 def format_date (day, month, year):
     return f"{day}/{month}/{year}"
-date = (22, 11, 1988) # this is a tuple
 
+date = (22, 11, 1988) # this is a tuple
 a = format_date(*date)
 print(a)
 #* unpacks date tuple
@@ -169,7 +215,7 @@ words = "CP1404 is a very good subject and I am HAPPY".split()
 
 date_string = "12/5/2000" #Enter DOB (d/m/y)
 parts = date_string.split("/") # this will be a list of strings
-my_dob = (int (parts[0]), int(parts[1]), int(parts[2])) #put inside tuple, e.g. (12, 5, 2000)
+my_dob = (int(parts[0]), int(parts[1]), int(parts[2])) #put inside tuple, e.g. (12, 5, 2000)
 print(my_dob)
 
 
@@ -186,9 +232,5 @@ mySeparator = "TEST"
 x = mySeparator.join(myDict)
 print(x)#nameTESTcountry
 
-message = '     Learn Python  '
-# remove leading and trailing whitespaces
-print('Message:', message.strip())#Learn Python
-print('Message:', message.rstrip())#     Learn Python
 
-print('Message:',message.replace("a", ""))#     Lern Python
+
