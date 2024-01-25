@@ -234,3 +234,10 @@ print(x)#nameTESTcountry
 
 
 
+print(f"{2.522:.2f}")
+
+s="He He"
+
+
+print(list(s)) #return a new list
+print(sorted(s))

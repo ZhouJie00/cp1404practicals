@@ -2,6 +2,7 @@ BoxLayout:
     orientation: 'vertical'
     BoxLayout:
         orientation: 'horizontal'
+
         TextInput:
             id: input_miles
             text: '34'
@@ -10,6 +11,7 @@ BoxLayout:
         BoxLayout:
             orientation: 'vertical'
             size_hint_x: 0.25
+
             Button:
                 text: 'Up'
                 on_press: app.handle_increment(1)

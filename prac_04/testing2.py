@@ -1,5 +1,4 @@
 s1="Thisisastring"
-
 print(s1[0])  #"T"
 print(s1[1])  #"h"
 print(s1[2])  #"i"
@@ -37,6 +36,8 @@ print(s1[-5:-1])   #trin
 
 print(s1[::])#Thisisastring
 print(s1[::-1])#gnirtsasisihT
+
+print(s1[2:99])
 print("-----------------6")
 
 choice = "dWAdadc".lower()
@@ -56,10 +57,14 @@ print(choice)#3
 
 choice = "dWAdadc".find("c")
 print(choice)#6, index 6
+choice = "dWAdadc".startswith("d")
+print("Start with: "+str(choice))# True
+choice = "dWAdadc".endswith("d")
+print("End with: "+str(choice))# False
 
 subject_code = "CP123"
 if "CP" in subject_code:
-    print("value is not found")
+    print("value is found")
 
 if "CA" not in "CP123":
     print("value is not found")
@@ -124,3 +129,8 @@ print(sum([1, 2, 1, 2, 1]))
 #The sum of the set is 7
 sum({1, 2, 1, 2, 1})
 "The sum of the set {1, 2, 1, 2, 1} is 3. This is because (sets) only hold unique elements"
+
+choice1 = "abcdEf"
+print(choice1.endswith('f'))
+
+txt1 = "   hello!o   "

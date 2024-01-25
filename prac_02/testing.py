@@ -40,6 +40,9 @@ format_date(16, 11, 1988)  # * unpacks date tuple, for tuple need upack
 format_date(16, 'May', 1970)  # error: month & year unfilled
 
 
-
+set1 ={'a','b'}
+set1.add('a')
+print("cccc")
+print(set1)
 
 main()

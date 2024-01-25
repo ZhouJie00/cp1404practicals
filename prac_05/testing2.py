@@ -17,6 +17,7 @@ print("----------------")
 student_dict={'101':"Marry Tan","102":"Peter Pan","103":"Joe Lim"}
 
 print(student_dict["102"])#Peter Pan
+print(student_dict.get("1022"))
 print(student_dict.get("103","not found")) #Joe Li
 print(student_dict.get("104","not found")) #Not found
 
@@ -55,7 +56,7 @@ print("----------------------")
 
 student_dict.clear()
 print(student_dict) #{}
-
+print("EEEEEE")
 
 dictionary = {'101': "Mary Tan", '102': "Peter Pan", '103': "Joe Lim"}
 
@@ -68,7 +69,11 @@ print(size)
 print(list1)
 print(list2)
 print(list3)
-print("----------------------directory_list")
+
+print(dictionary.keys())
+print(dictionary.values())
+print(dictionary.items())
+print("-----------------                 -----directory_list")
 
 
 cDirect={"Jane":[4,2,1],"Tom":[6,3,1],"Jake":[6,2,1]}
@@ -110,3 +115,11 @@ for x in a:
 
 
 
+x, y = (1, 2)  # (1, 2) is a tuple
+print(x, type(x))  # 1 <class 'int'>
+print(y, type(y))
+
+def hh():
+    return 5,9
+
+print(hh())

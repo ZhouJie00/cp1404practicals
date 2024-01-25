@@ -1,0 +1,70 @@
+BoxLayout:
+    orientation: 'horizontal'
+
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint_x: 0.25
+
+        Label:
+            text: "Sort by:"
+            font_size: 20
+
+        Spinner:
+            text_autoupdate: True
+            values: app.state_codes
+            on_text: app.change_state(self.text)
+
+        Label:
+            text: "Add New Song..."
+            font_size: 20
+
+        Label:
+            text: "Title:"
+            font_size: 20
+
+        TextInput:
+            id: title_input
+            multiline: False
+
+        Label:
+            text: "Artist:"
+            font_size: 20
+
+        TextInput:
+            id: artist_input
+            multiline: False
+
+        Label:
+            text: "Year:"
+            font_size: 20
+
+        TextInput:
+            id: year_input
+            multiline: False
+
+        Button:
+            text: 'Add Song'
+            on_press: app.handle_new_song()
+
+        Button:
+            text: 'Clear'
+            on_press: app.handle_clear()
+
+    BoxLayout:
+        orientation: 'vertical'
+        id: button_container
+        size_hint_x: 0.75
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_y: 0.25
+
+            Label:
+                text: "To learn: "
+                font_size: 20
+
+            Label:
+                text: "Learned: "
+                font_size: 20
+
+
